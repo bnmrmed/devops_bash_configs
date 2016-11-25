@@ -1,6 +1,9 @@
 ##CHANGE LOG
 ---
 
+##1.1.1 - 11/25/2016 - Levon Becker
+* Added conditional show on varying aws env vars in .bash_aws
+
 ##1.1.0 - 11/25/2016 - Levon Becker
 * Added some CFNL and CFNC Submodules to Scripts. 
 * Added Improved AWS Account switching functions. 
