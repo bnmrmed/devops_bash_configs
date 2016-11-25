@@ -11,7 +11,7 @@ alias psg="ps -ef | grep "
 alias cls="clear"
 alias h="history | grep -i "
 
-# Kitchen CI
+# Kitchen
 ##########################################################
 alias kc="kitchen converge $1"
 alias kcreate="kitchen create $1"
@@ -55,8 +55,7 @@ alias docsps="docker service ps $1"
 ## Docker Network
 alias docnetls="docker network ls"
 
-
-# Knife + Chef
+# Knife
 ##########################################################
 alias k-dbsi="knife data bag show $1 $2 --secret-file $HOME/.chef/encrypted_data_bag_secret"
 alias k-dbs="knife data bag show $1"

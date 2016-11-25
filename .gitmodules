@@ -1,0 +1,6 @@
+[submodule "scripts/cfn_launcher"]
+	path = scripts/cfn_launcher
+	url = https://github.com/bonusbits/cfn_launcher.git
+[submodule "scripts/cfn_converter"]
+	path = scripts/cfn_converter
+	url = https://github.com/bonusbits/cfn_converter.git
