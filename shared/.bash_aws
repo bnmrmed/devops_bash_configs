@@ -201,7 +201,12 @@ function aws-set(){
 #export PATH=$PATH:$EC2_HOME/bin
 
 # Aliases
-alias aws-set-a1-priate="aws-set account1 prd uswest2 private"
-alias aws-set-a1-public="aws-set account1 prd uswest2 public"
-alias aws-set-a2-private="aws-set account2 dev uswest2 private"
-alias aws-set-a2-public="aws-set account2 dev uswest2 public"
+alias aws-set-a1-dev-priate="aws-set account1 dev uswest2 private"
+alias aws-set-a1-dev-public="aws-set account1 dev uswest2 public"
+alias aws-set-a1-prd-priate="aws-set account1 prd uswest2 private"
+alias aws-set-a1-prd-public="aws-set account1 prd uswest2 public"
+
+alias aws-set-a2-dev-private="aws-set account2 dev uswest2 private"
+alias aws-set-a2-dev-public="aws-set account2 dev uswest2 public"
+alias aws-set-a2-prd-private="aws-set account2 dev uswest2 private"
+alias aws-set-a2-prd-public="aws-set account2 dev uswest2 public"

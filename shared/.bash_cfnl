@@ -4,7 +4,7 @@
 
 # Symlink
 if [ ! -h "/usr/local/bin/cfnl" ]; then
-   ln -s "/Users/levon/Development/github/bonusbits/cfn_launcher/cfn-launcher.sh" /usr/local/bin/cfnl
+   ln -s "/path/to/clone/cfn_launcher/cfn-launcher.sh" /usr/local/bin/cfnl
 fi
 
 # Task Aliases
@@ -19,24 +19,24 @@ alias cfnld="cfnl -d -f "
 
 ## DEV
 ### vpc
-dev_vpc_uw2="$HOME/aws/cfnl_configs/account1-uswest2-dev-vpc.yml"
-alias cf-create-uswest2-account1-dev-vpc="aws-set-bbdev-public && cfnlc $dev_vpc_uw2"
-alias cf-update-uswest2-account1-dev-vpc="aws-set-bbdev-public && cfnlu $dev_vpc_uw2"
-alias cf-delete-uswest2-account1-dev-vpc="aws-set-bbdev-public && cfnld $dev_vpc_uw2"
+dev_vpc_uw2="/path/to/cfnl_configs/account1-uswest2-dev-vpc.yml"
+alias cf-create-uswest2-account1-dev-vpc="aws-set-a1-dev-public && cfnlc $dev_vpc_uw2"
+alias cf-update-uswest2-account1-dev-vpc="aws-set-a1-dev-public && cfnlu $dev_vpc_uw2"
+alias cf-delete-uswest2-account1-dev-vpc="aws-set-a1-dev-public && cfnld $dev_vpc_uw2"
 ### web
-dev_web_uw2="$HOME/aws/cfnl_configs/account1-uswest2-dev-web.yml"
-alias cf-create-uswest2-account1-dev-web="aws-set-bbdev-public && cfnlc $dev_web_uw2"
-alias cf-update-uswest2-account1-dev-web="aws-set-bbdev-public && cfnlu $dev_web_uw2"
-alias cf-delete-uswest2-account1-dev-web="aws-set-bbdev-public && cfnld $dev_web_uw2"
+dev_web_uw2="/path/to/cfnl_configs/account1-uswest2-dev-web.yml"
+alias cf-create-uswest2-account1-dev-web="aws-set-a1-dev-public && cfnlc $dev_web_uw2"
+alias cf-update-uswest2-account1-dev-web="aws-set-a1-dev-public&& cfnlu $dev_web_uw2"
+alias cf-delete-uswest2-account1-dev-web="aws-set-a1-dev-public && cfnld $dev_web_uw2"
 
 ## PRD
 ### vpc
-prd_vpc_uw2="$HOME/aws/cfnl_configs/account1-uswest2-dev-vpc.yml"
-alias cf-create-uswest2-account1-prd-vpc="aws-set-bbdev-public && cfnlc $prd_vpc_uw2"
-alias cf-update-uswest2-account1-prd-vpc="aws-set-bbdev-public && cfnlu $prd_vpc_uw2"
-alias cf-delete-uswest2-account1-prd-vpc="aws-set-bbdev-public && cfnld $prd_vpc_uw2"
+prd_vpc_uw2="/path/to/cfnl_configs/account1-uswest2-dev-vpc.yml"
+alias cf-create-uswest2-account1-prd-vpc="aws-set-a1-prd-public && cfnlc $prd_vpc_uw2"
+alias cf-update-uswest2-account1-prd-vpc="aws-set-a1-prd-public && cfnlu $prd_vpc_uw2"
+alias cf-delete-uswest2-account1-prd-vpc="aws-set-a1-prd-public && cfnld $prd_vpc_uw2"
 ### web
-prd_web_uw2="$HOME/aws/cfnl_configs/account1-uswest2-dev-web.yml"
-alias cf-create-uswest2-account1-prd-web="aws-set-bbdev-public && cfnlc $prd_web_uw2"
-alias cf-update-uswest2-account1-prd-web="aws-set-bbdev-public && cfnlu $prd_web_uw2"
-alias cf-delete-uswest2-account1-prd-web="aws-set-bbdev-public && cfnld $prd_web_uw2"
+prd_web_uw2="/path/to/cfnl_configs/account1-uswest2-dev-web.yml"
+alias cf-create-uswest2-account1-prd-web="aws-set-a1-prd-public && cfnlc $prd_web_uw2"
+alias cf-update-uswest2-account1-prd-web="aws-set-a1-prd-public && cfnlu $prd_web_uw2"
+alias cf-delete-uswest2-account1-prd-web="aws-set-a1-prd-public && cfnld $prd_web_uw2"
