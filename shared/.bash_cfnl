@@ -31,12 +31,12 @@ alias cf-delete-uswest2-account1-dev-web="aws-set-a1-dev-public && cfnld $dev_we
 
 ## PRD
 ### vpc
-prd_vpc_uw2="/path/to/cfnl_configs/account1-uswest2-dev-vpc.yml"
+prd_vpc_uw2="/path/to/cfnl_configs/account1-uswest2-prd-vpc.yml"
 alias cf-create-uswest2-account1-prd-vpc="aws-set-a1-prd-public && cfnlc $prd_vpc_uw2"
 alias cf-update-uswest2-account1-prd-vpc="aws-set-a1-prd-public && cfnlu $prd_vpc_uw2"
 alias cf-delete-uswest2-account1-prd-vpc="aws-set-a1-prd-public && cfnld $prd_vpc_uw2"
 ### web
-prd_web_uw2="/path/to/cfnl_configs/account1-uswest2-dev-web.yml"
+prd_web_uw2="/path/to/cfnl_configs/account1-uswest2-prd-web.yml"
 alias cf-create-uswest2-account1-prd-web="aws-set-a1-prd-public && cfnlc $prd_web_uw2"
 alias cf-update-uswest2-account1-prd-web="aws-set-a1-prd-public && cfnlu $prd_web_uw2"
 alias cf-delete-uswest2-account1-prd-web="aws-set-a1-prd-public && cfnld $prd_web_uw2"
