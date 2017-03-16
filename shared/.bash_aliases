@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Base Command Shortcuts
 ##########################################################
@@ -70,3 +70,8 @@ alias k-rs="knife role show $1"
 alias k-rl="knife role list"
 alias k-re="knife role edit $1"
 alias k-s="knife search node $1"
+
+# Update Reference Git Tag - https://github.com/bonusbits/update_reference_git_tag
+if [ ! -h "/usr/local/bin/urgt" ]; then
+   ln -s "$HOME/Development/github/bonusbits/update_reference_git_tag/urgt.sh" /usr/local/bin/urgt
+fi

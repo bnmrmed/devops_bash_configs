@@ -4,3 +4,6 @@
 [submodule "scripts/cfn_converter"]
 	path = scripts/cfn_converter
 	url = https://github.com/bonusbits/cfn_converter.git
+[submodule "scripts/update_reference_git_tag"]
+	path = scripts/update_reference_git_tag
+	url = https://github.com/bonusbits/update_reference_git_tag

@@ -1,42 +1,104 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# CloudFormation Launcher
+# CloudFormation Launcher - https://github.com/bonusbits/cfn_launcher
 
 # Symlink
 if [ ! -h "/usr/local/bin/cfnl" ]; then
-   ln -s "/path/to/clone/cfn_launcher/cfn-launcher.sh" /usr/local/bin/cfnl
+   ln -s "$HOME/Development/github/bonusbits/cfn_launcher/cfn-launcher.sh" /usr/local/bin/cfnl
 fi
 
-# Task Aliases
-## Create Stack
-alias cfnlc="cfnl -f "
-## Updated Stack
-alias cfnlu="cfnl -u -f "
-## Delete Stack
-alias cfnld="cfnl -d -f "
+function cfnl-show() {
+    echo "CFNL_PATH: ($CFNL_PATH)"
+}
 
-# Pre-Configured Stacks
+function cfnl-set-vars() {
+    cfnl_configs_path="$HOME/aws/cloudformation/cfnl_configs"
+    region=$1
+    aws_account=$2
+    aws_env=$3
+    project=$4
 
-## DEV
-### vpc
-dev_vpc_uw2="/path/to/cfnl_configs/account1-uswest2-dev-vpc.yml"
-alias cf-create-uswest2-account1-dev-vpc="aws-set-a1-dev-public && cfnlc $dev_vpc_uw2"
-alias cf-update-uswest2-account1-dev-vpc="aws-set-a1-dev-public && cfnlu $dev_vpc_uw2"
-alias cf-delete-uswest2-account1-dev-vpc="aws-set-a1-dev-public && cfnld $dev_vpc_uw2"
-### web
-dev_web_uw2="/path/to/cfnl_configs/account1-uswest2-dev-web.yml"
-alias cf-create-uswest2-account1-dev-web="aws-set-a1-dev-public && cfnlc $dev_web_uw2"
-alias cf-update-uswest2-account1-dev-web="aws-set-a1-dev-public&& cfnlu $dev_web_uw2"
-alias cf-delete-uswest2-account1-dev-web="aws-set-a1-dev-public && cfnld $dev_web_uw2"
+    export CFNL_PATH="$cfnl_configs_path/$region/$aws_account/$aws_env/$project"
+    cfnl-show
+}
 
-## PRD
-### vpc
-prd_vpc_uw2="/path/to/cfnl_configs/account1-uswest2-prd-vpc.yml"
-alias cf-create-uswest2-account1-prd-vpc="aws-set-a1-prd-public && cfnlc $prd_vpc_uw2"
-alias cf-update-uswest2-account1-prd-vpc="aws-set-a1-prd-public && cfnlu $prd_vpc_uw2"
-alias cf-delete-uswest2-account1-prd-vpc="aws-set-a1-prd-public && cfnld $prd_vpc_uw2"
-### web
-prd_web_uw2="/path/to/cfnl_configs/account1-uswest2-prd-web.yml"
-alias cf-create-uswest2-account1-prd-web="aws-set-a1-prd-public && cfnlc $prd_web_uw2"
-alias cf-update-uswest2-account1-prd-web="aws-set-a1-prd-public && cfnlu $prd_web_uw2"
-alias cf-delete-uswest2-account1-prd-web="aws-set-a1-prd-public && cfnld $prd_web_uw2"
+# Default
+cfnl-set-vars uswest2 account01 prd project01
+
+function cfc() {
+    echo "Running (/usr/local/bin/cfnl -f ${CFNL_PATH}/${1}.yml)"
+    /usr/local/bin/cfnl -f "$CFNL_PATH/$1.yml"
+}
+
+function cfu() {
+    echo "Running (/usr/local/bin/cfnl -u -f ${CFNL_PATH}/${1}.yml)"
+    /usr/local/bin/cfnl -u -f "$CFNL_PATH/$1.yml"
+}
+
+function cfd() {
+    echo "Running (/usr/local/bin/cfnl -d -f ${CFNL_PATH}/${1}.yml)"
+    /usr/local/bin/cfnl -d -f "$CFNL_PATH/$1.yml"
+}
+
+# US WEST 2
+
+## Account01
+### DEV
+#### Project01
+alias set-cfnl-uw2-ac01-dev-project01="aws-set-ac01dev-public && cfnl-set-vars uswest2 account01 dev project01"
+#### Project02
+alias set-cfnl-uw2-ac01-dev-project02="aws-set-ac01dev-public && cfnl-set-vars uswest2 account01 dev project02"
+#### Shared
+alias set-cfnl-uw2-ac01-dev-shared="aws-set-ac01dev-public && cfnl-set-vars uswest2 account01 dev shared"
+
+### PRD
+#### Project01
+alias set-cfnl-uw2-ac01-prd-project01="aws-set-ac01prd-public && cfnl-set-vars uswest2 account01 prd project01"
+#### Project02
+alias set-cfnl-uw2-ac01-prd-project02="aws-set-ac01prd-public && cfnl-set-vars uswest2 account01 prd project02"
+#### Shared
+alias set-cfnl-uw2-ac01-prd-shared="aws-set-ac01prd-public && cfnl-set-vars uswest2 account01 prd shared"
+
+## Account02
+### DEV
+### Project01
+alias set-cfnl-uw2-ac02-dev-project01="aws-set-ac02dev-public && cfnl-set-vars uswest2 account02 dev project01"
+
+# Usage
+## Folder Structure
+# $HOME/aws/cloudformation/cfnl_configs/
+#└── uswest2
+#    └── account01
+#        ├── dev
+#        │   ├── project01
+#        │   │   └── efs.yml
+#        │   │   └── rds-snapshot.yml
+#        │   │   └── web.yml
+#        │   ├── shared
+#        │   │   └── vpc.yml
+#        │   │   └── utm.yml
+#        │   └── project02
+#        │       ├── efs.yml
+#        │       └── rds-snapshot.yml
+#        │       └── web.yml
+#        └── prd
+#            ├── project01
+#            │   ├── efs.yml
+#            │   ├── rds.yml
+#            │   └── web.yml
+#            ├── shared
+#            │   ├── vpc.yml
+#            │   └── utm.yml
+#            └── project02
+#                ├── efs.yml
+#                ├── rds.yml
+#                ├── web-blue.yml
+#                └── web-green.yml
+
+## Example Commands
+# set-cfnl-uw2-ac01-dev-project01
+# cfc web
+# Would use $HOME/aws/cloudformation/cfnl_configs/uswest2/account01/dev/project01/web.yml
+# set-cfnl-uw2-ac01-prd-project02
+# cfc web-blue
+# Would use $HOME/aws/cloudformation/cfnl_configs/uswest2/account01/prd/project02/web-blue.yml

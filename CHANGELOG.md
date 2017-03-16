@@ -1,6 +1,12 @@
 ##CHANGE LOG
 ---
 
+##1.2.0 - 03/16/2017 - Levon Becker
+* Added Better logic to .bash_cfnl
+* Small refactor of .bash_aws
+* Added update reference git tag symlink to .bash_aliases
+* Added update reference git tag script sub module to scripts folder.
+
 ##1.1.1 - 11/25/2016 - Levon Becker
 * Added conditional show on varying aws env vars in .bash_aws
 
