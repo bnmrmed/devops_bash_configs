@@ -14,16 +14,17 @@ function cfnl-show() {
 function cfnl-set-vars() {
     cfnl_configs_path="$HOME/.cfnl"
     region=$1
-    aws_account=$2
-    aws_env=$3
-    project=$4
+    client=$2
+    aws_account=$3
+    aws_env=$4
+    project=$5
 
-    export CFNL_PATH="$cfnl_configs_path/$region/$aws_account/$aws_env/$project"
+    export CFNL_PATH="$cfnl_configs_path/$region/$client/$aws_account/$aws_env/$project"
     cfnl-show
 }
 
 # Default
-cfnl-set-vars uswest2 account01 prd project01
+cfnl-set-vars uswest2 client1 account01 prd project01
 
 function cfc() {
     echo "Running (/usr/local/bin/cfnl -f ${CFNL_PATH}/${1}.yml)"

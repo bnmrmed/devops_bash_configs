@@ -2,7 +2,7 @@
 
 # Client 1 Specific Aliases - Or Could be Account Specific
 
-# CloudFormation Launcher
+# CloudFormation Launcher CFNL Path Aliases
 
 # US WEST 2
 ## Account01
@@ -31,37 +31,42 @@ alias set-cfnl-uw2-ac02-dev-project01="aws-set-ac02dev-public && cfnl-set-vars u
 ## Folder Structure
 # $HOME/.cfnl/
 #└── uswest2
-#    └── account01
-#        ├── dev
-#        │   ├── project01
-#        │   │   └── efs.yml
-#        │   │   └── rds-snapshot.yml
-#        │   │   └── web.yml
-#        │   ├── shared
-#        │   │   └── vpc.yml
-#        │   │   └── utm.yml
-#        │   └── project02
-#        │       ├── efs.yml
-#        │       └── rds-snapshot.yml
-#        │       └── web.yml
-#        └── prd
-#            ├── project01
-#            │   ├── efs.yml
-#            │   ├── rds.yml
-#            │   └── web.yml
-#            ├── shared
-#            │   ├── vpc.yml
-#            │   └── utm.yml
-#            └── project02
-#                ├── efs.yml
-#                ├── rds.yml
-#                ├── web-blue.yml
-#                └── web-green.yml
+#    └── client01
+#        └── account01
+#            ├── dev
+#            │   ├── project01
+#            │   │   └── efs.yml
+#            │   │   └── rds-snapshot.yml
+#            │   │   └── web.yml
+#            │   ├── shared
+#            │   │   └── vpc.yml
+#            │   │   └── utm.yml
+#            │   └── project02
+#            │       ├── efs.yml
+#            │       └── rds-snapshot.yml
+#            │       └── web.yml
+#            └── prd
+#                ├── project01
+#                │   ├── efs.yml
+#                │   ├── rds.yml
+#                │   └── web.yml
+#                ├── shared
+#                │   ├── vpc.yml
+#                │   └── utm.yml
+#                └── project02
+#                    ├── efs.yml
+#                    ├── rds.yml
+#                    ├── web-blue.yml
+#                    └── web-green.yml
 
-## Example Commands
-# set-cfnl-uw2-ac01-dev-project01
-# cfc web
-# Would use $HOME/aws/cloudformation/cfnl_configs/uswest2/account01/dev/project01/web.yml
-# set-cfnl-uw2-ac01-prd-project02
-# cfc web-blue
-# Would use $HOME/aws/cloudformation/cfnl_configs/uswest2/account01/prd/project02/web-blue.yml
+# Example Usage
+## Set CFNL Path
+#cfnl-set-vars uswest2 client01 account01 prd project01
+## CFNL is now set to use $HOME/.cfnl/uswest2/client01/account01/dev/project01/*.yml
+#
+## Create Stack
+#cfc web
+## Delete Stack
+#cfd web
+## Update Stack
+#cfu web
