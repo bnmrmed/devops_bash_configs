@@ -1,6 +1,10 @@
 ##CHANGE LOG
 ---
 
+##1.2.1 - 03/21/2017 - Levon Becker
+* Split CFNL aliases to .bash_client1
+* Added a couple Terraform aliases to .bash_aliases
+
 ##1.2.0 - 03/16/2017 - Levon Becker
 * Added Better logic to .bash_cfnl
 * Small refactor of .bash_aws

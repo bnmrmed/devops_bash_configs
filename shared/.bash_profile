@@ -20,6 +20,11 @@ if [ -f $HOME/.bash_cfnl ]; then
 	  source $HOME/.bash_cfnl
 fi
 
+# Company Specific Aliases
+if [ -f $HOME/.bash_client1 ]; then
+	  source $HOME/.bash_client1
+fi
+
 PS1='\[\033[1;31m\]\u\[\033[1;32m\]@\[\033[1;33m\]\h \[\033[1;32m\]$PWD:\n# \[\033[0m\]'
 
 clear

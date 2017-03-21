@@ -11,6 +11,13 @@ alias psg="ps -ef | grep "
 alias cls="clear"
 alias h="history | grep -i "
 
+# Terraform
+##########################################################
+alias tf="terraform $1"
+alias tfa="terraform apply $1"
+alias tfs="terraform show $1"
+alias tfd="terraform destroy $1"
+
 # Kitchen
 ##########################################################
 alias kc="kitchen converge $1"
@@ -32,16 +39,6 @@ alias kdocker="KITCHEN_YAML=.kitchen.docker.yml"
 
 # Docker
 ##########################################################
-## Docker Machine
-alias docm="docker-machine $1"
-alias docmls="docker-machine ls"
-function docmenv(){
-  eval $(docker-machine env $1)
-  echo ''
-  echo -n "Docker Machine Name: "
-  echo $DOCKER_MACHINE_NAME
-  echo ''
-}
 alias docinfo="docker info"
 
 ## Docker Container
