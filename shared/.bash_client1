@@ -29,7 +29,7 @@ alias set-cfnl-uw2-ac02-dev-project01="aws-set-ac02dev-public && cfnl-set-vars u
 
 # Usage
 ## Folder Structure
-# $HOME/.aem/
+# $HOME/.cfnl/
 #└── uswest2
 #    └── account01
 #        ├── dev

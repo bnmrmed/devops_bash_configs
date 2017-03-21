@@ -12,7 +12,7 @@ function cfnl-show() {
 }
 
 function cfnl-set-vars() {
-    cfnl_configs_path="$HOME/aws/cloudformation/cfnl_configs"
+    cfnl_configs_path="$HOME/.cfnl"
     region=$1
     aws_account=$2
     aws_env=$3
