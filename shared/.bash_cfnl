@@ -11,94 +11,27 @@ function cfnl-show() {
     echo "CFNL_PATH: ($CFNL_PATH)"
 }
 
-function cfnl-set-vars() {
-    cfnl_configs_path="$HOME/aws/cloudformation/cfnl_configs"
-    region=$1
-    aws_account=$2
-    aws_env=$3
-    project=$4
+function cfnl-set-path() {
+    cfnl_configs_path=$1
 
-    export CFNL_PATH="$cfnl_configs_path/$region/$aws_account/$aws_env/$project"
+    export CFNL_PATH="$cfnl_configs_path"
     cfnl-show
 }
 
 # Default
-cfnl-set-vars uswest2 account01 prd project01
+cfnl-set-path $HOME/.cfnl/uswest2/client1/account01/prd/project01
 
 function cfc() {
-    echo "Running (/usr/local/bin/cfnl -f ${CFNL_PATH}/${1}.yml)"
+    echo "Running Create Stack (/usr/local/bin/cfnl -f ${CFNL_PATH}/${1}.yml)"
     /usr/local/bin/cfnl -f "$CFNL_PATH/$1.yml"
 }
 
 function cfu() {
-    echo "Running (/usr/local/bin/cfnl -u -f ${CFNL_PATH}/${1}.yml)"
+    echo "Running Update Stack (/usr/local/bin/cfnl -u -f ${CFNL_PATH}/${1}.yml)"
     /usr/local/bin/cfnl -u -f "$CFNL_PATH/$1.yml"
 }
 
 function cfd() {
-    echo "Running (/usr/local/bin/cfnl -d -f ${CFNL_PATH}/${1}.yml)"
+    echo "Running Delete Stack (/usr/local/bin/cfnl -d -f ${CFNL_PATH}/${1}.yml)"
     /usr/local/bin/cfnl -d -f "$CFNL_PATH/$1.yml"
 }
-
-# US WEST 2
-
-## Account01
-### DEV
-#### Project01
-alias set-cfnl-uw2-ac01-dev-project01="aws-set-ac01dev-public && cfnl-set-vars uswest2 account01 dev project01"
-#### Project02
-alias set-cfnl-uw2-ac01-dev-project02="aws-set-ac01dev-public && cfnl-set-vars uswest2 account01 dev project02"
-#### Shared
-alias set-cfnl-uw2-ac01-dev-shared="aws-set-ac01dev-public && cfnl-set-vars uswest2 account01 dev shared"
-
-### PRD
-#### Project01
-alias set-cfnl-uw2-ac01-prd-project01="aws-set-ac01prd-public && cfnl-set-vars uswest2 account01 prd project01"
-#### Project02
-alias set-cfnl-uw2-ac01-prd-project02="aws-set-ac01prd-public && cfnl-set-vars uswest2 account01 prd project02"
-#### Shared
-alias set-cfnl-uw2-ac01-prd-shared="aws-set-ac01prd-public && cfnl-set-vars uswest2 account01 prd shared"
-
-## Account02
-### DEV
-### Project01
-alias set-cfnl-uw2-ac02-dev-project01="aws-set-ac02dev-public && cfnl-set-vars uswest2 account02 dev project01"
-
-# Usage
-## Folder Structure
-# $HOME/aws/cloudformation/cfnl_configs/
-#└── uswest2
-#    └── account01
-#        ├── dev
-#        │   ├── project01
-#        │   │   └── efs.yml
-#        │   │   └── rds-snapshot.yml
-#        │   │   └── web.yml
-#        │   ├── shared
-#        │   │   └── vpc.yml
-#        │   │   └── utm.yml
-#        │   └── project02
-#        │       ├── efs.yml
-#        │       └── rds-snapshot.yml
-#        │       └── web.yml
-#        └── prd
-#            ├── project01
-#            │   ├── efs.yml
-#            │   ├── rds.yml
-#            │   └── web.yml
-#            ├── shared
-#            │   ├── vpc.yml
-#            │   └── utm.yml
-#            └── project02
-#                ├── efs.yml
-#                ├── rds.yml
-#                ├── web-blue.yml
-#                └── web-green.yml
-
-## Example Commands
-# set-cfnl-uw2-ac01-dev-project01
-# cfc web
-# Would use $HOME/aws/cloudformation/cfnl_configs/uswest2/account01/dev/project01/web.yml
-# set-cfnl-uw2-ac01-prd-project02
-# cfc web-blue
-# Would use $HOME/aws/cloudformation/cfnl_configs/uswest2/account01/prd/project02/web-blue.yml
