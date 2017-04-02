@@ -1,6 +1,11 @@
 ##CHANGE LOG
 ---
 
+##1.2.1 - 04/02/2017 - Levon Becker
+* Added New Docker aliases/functions
+* Split-up aliases/functions more to make easy to pick and chose.
+* Added some starter Terraform aliases
+
 ##1.2.0 - 03/16/2017 - Levon Becker
 * Added Better logic to .bash_cfnl
 * Small refactor of .bash_aws

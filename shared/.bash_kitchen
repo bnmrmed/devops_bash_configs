@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Kitchen CI
+##########################################################
+alias kc="kitchen converge $1"
+alias kcreate="kitchen create $1"
+alias kd="kitchen destroy $1"
+alias kdiag="kitchen diagnose $1"
+alias ki="kitchen init $1"
+alias kl="kitchen list"
+alias klogin="kitchen login $1"
+alias ks="kitchen setup $1"
+alias kdebug="kitchen $1 -l debug"
+alias kv="kitchen verify $1"
+alias kt="kitchen test $1"
+alias kexec="kitchen exec $1 -c $2"
+alias kyaml="KITCHEN_YAML=$1"
+alias kec2="KITCHEN_YAML=.kitchen.ec2.yml"
+alias kvagrant="KITCHEN_YAML=.kitchen.vagrant.yml"
+alias kdocker="KITCHEN_YAML=.kitchen.docker.yml"
+alias kdokken="KITCHEN_YAML=.kitchen.dokken.yml"

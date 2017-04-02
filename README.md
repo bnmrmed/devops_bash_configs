@@ -3,6 +3,11 @@
 Basic BASH Profile Configuration examples for MacOS and Linux for a DevOps Workstation. 
 The configurations are focused on AWS, Vagrant, Docker, Chef and Test Kitchen.
 
+I've split up a lot of the aliases into their own BASH scripts under shared. 
+This makes it easier to pick and chose what you'd like or not like to load. 
+Plus it makes it more organized. Although, if it's all in one or two files the shell will load faster.
+So, it's up to you if you'd like to merge them together.
+
 ## Tested Operating Systems
 * MacOS (10.12.3)
     * Homebrew (1.1.10)
