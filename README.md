@@ -22,6 +22,17 @@ So, it's up to you if you'd like to merge them together.
 * Additional Gems
     * kitchen-docker (2.6.0)
     
+## Submodules
+The scripts directory consists of git submodules. Meaning they are clones of other git repositories I've created.
+To pull them try the following commands from the root directory.
+
+1. ```git clone https://github.com/bonusbits/devops_bash_config_examples.git```
+2. ```git config --global fetch.recurseSubmodules yes```
+3. ```git submodule update --init --recursive```
+
+Then if you want to pull updates with the **fetch.recurseSubmodules** on a regular **git pull** should work. If it doesn't try the following.
+* ```git submodule foreach git pull origin master```
+    
 ## Usage
 #### [Linux](https://github.com/bonusbits/devops_bash_config_examples/tree/master/linux)
 The linux folder has BASH scripts specific to RHEL/Ubuntu that will not work on macOS.
