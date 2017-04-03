@@ -7,3 +7,6 @@
 [submodule "scripts/update_reference_git_tag"]
 	path = scripts/update_reference_git_tag
 	url = https://github.com/bonusbits/update_reference_git_tag
+[submodule "scripts/build_docker_image"]
+	path = scripts/build_docker_image
+	url = https://github.com/bonusbits/build_docker_image.git

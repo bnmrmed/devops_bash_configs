@@ -1,6 +1,10 @@
 ##CHANGE LOG
 ---
 
+## 1.2.3 - 04/03/2017 - Levon Becker
+* Added build_docker_image script and bash profile example
+* Pulled latest submodules
+
 ## 1.2.2 - 04/02/2017 - Levon Becker
 * Added New Docker aliases/functions
 * Split-up aliases/functions more to make easy to pick and chose.
