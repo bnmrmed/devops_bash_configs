@@ -35,3 +35,8 @@ function cfd() {
     echo "Running Delete Stack (/usr/local/bin/cfnl -d -f ${CFNL_PATH}/${1}.yml)"
     /usr/local/bin/cfnl -d -f "$CFNL_PATH/$1.yml"
 }
+
+function cfs() {
+    # echo "Running Stack Status (/usr/local/bin/cfnl -s -f ${CFNL_PATH}/${1}.yml)"
+    /usr/local/bin/cfnl -s -f "$CFNL_PATH/$1.yml"
+}
