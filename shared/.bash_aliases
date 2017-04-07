@@ -2,7 +2,6 @@
 
 # Base Command Shortcuts
 ##########################################################
-alias ls="ls"
 alias l="ls"
 alias rm="rm -i"
 alias mv="mv -i"
