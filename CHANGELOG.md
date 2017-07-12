@@ -1,6 +1,9 @@
 ##CHANGE LOG
 ---
 
+## 1.2.4 - 07/12/2017 - Levon Becker
+* Moved aws-clear to before sets. So when wrong args entered won't clear what is currently set until really going to reset them.
+
 ## 1.2.3 - 04/03/2017 - Levon Becker
 * Added build_docker_image script and bash profile example
 * Pulled latest submodules
