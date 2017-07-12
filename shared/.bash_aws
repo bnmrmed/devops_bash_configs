@@ -56,7 +56,6 @@ function aws-envs(){
 }
 
 function aws-set(){
-	aws-clear
 	# Skip if Argument is Null
   	if [ -n "$1" ]; then
 	    # Set Env Variable
@@ -71,6 +70,7 @@ function aws-set(){
 
 			# Default to Prd if Nil or if PRD passed
 			if [ "$2" == "sandbox" ]; then
+	            aws-clear
 				export AWS_SSH_KEY_ID=sandbox
         		export AWS_SSH_KEY_PATH=$HOME/.ssh/sandbox.pem
 				export AWS_VPC_ID=vpc-00000000
@@ -79,6 +79,7 @@ function aws-set(){
 				export AWS_IAM_INSTANCE_PROFILE_1=ec2-base
 				export AWS_SUBNET=subnet-00000000
 			elif [ "$2" == "dev" ]; then
+	            aws-clear
 				export AWS_SSH_KEY_ID=account01_dev
         		export AWS_SSH_KEY_PATH=$HOME/.ssh/account01_dev.pem
 				export AWS_VPC_ID=vpc-00000000
@@ -103,6 +104,7 @@ function aws-set(){
 					export AWS_PUBLIC_IP=false
 				fi
 			else
+	            aws-clear
 				# Default to Prd if not args passed
 				export AWS_SSH_KEY_ID=account01_prd
 				export AWS_SSH_KEY_PATH=$HOME/.ssh/account01_prd.pem
@@ -141,6 +143,7 @@ function aws-set(){
 
 			# Default to my Lab USWest2
 			if [ -n "$2" -o "$2" == "dev" ]; then
+	            aws-clear
 				export AWS_SSH_KEY_ID=account02_dev
 	        	export AWS_SSH_KEY_PATH=$HOME/.ssh/account02_dev.pem
 				export AWS_PROFILE=account02
@@ -170,6 +173,7 @@ function aws-set(){
 
 			# Default to prd vpc
 			if [ -n "$2" -o "$2" == "prd" ]; then
+	            aws-clear
 				export AWS_SSH_KEY_ID=account03_prd
 	            export AWS_SSH_KEY_PATH=$HOME/.ssh/account03_prd.pem
 				export AWS_VPC_ID=vpc-00000000
