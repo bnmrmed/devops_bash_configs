@@ -6,7 +6,9 @@
 ## Set Docker IP to what works locally for you
 docker_proxy_ip="169.254.169.254"
 
-#
+# If using Charles Proxy leave otherwise add creds/host to enterprise proxy
+proxy_host="localhost"
+proxy_port="8888"
 
 function proxy-check(){
     if [ "$ALL_PROXY" = "" ]; then
@@ -30,9 +32,9 @@ function proxy-show(){
 
 function proxy-on(){
     if ifconfig -L lo0 | grep ${docker_proxy_ip}; then
-        export ALL_PROXY=http://${docker_proxy_ip}:8888
+        export ALL_PROXY=http://${docker_proxy_ip}:${proxy_port}
     else
-        export ALL_PROXY=http://localhost:8888
+        export ALL_PROXY=http://${proxy_host}:${proxy_port}
     fi
     export HTTP_PROXY=$ALL_PROXY
     export http_proxy=$ALL_PROXY
@@ -79,7 +81,7 @@ function proxy-lo-show(){
 
 function proxy-docker-on(){
     proxy-enable-lo-alias
-    export ALL_PROXY=http://${docker_proxy_ip}:8888
+    export ALL_PROXY=http://${docker_proxy_ip}:${proxy_port}
     export HTTP_PROXY=$ALL_PROXY
     export http_proxy=$ALL_PROXY
     export HTTPS_PROXY=$ALL_PROXY
