@@ -1,18 +1,53 @@
 #!/usr/bin/env bash
 
-# Kitchen CI
+# Kitchen CLI Shortcuts with Proxy Support
+## Workaround for Local Proxy Passed to Instance that
+## uses a different Proxy. Example for cloud (AWS-EC2)
+## Requires .bash_proxy if PROXY_ENV set to true (I Set Env Var there to enable)
 ##########################################################
-alias kc="kitchen converge $1"
-alias kcreate="kitchen create $1"
-alias kd="kitchen destroy $1"
+if [ "$PROXY_ENV" = "true" ]; then
+function kcreate(){
+    proxy-on
+    kitchen create $1
+}
+function kc(){
+    proxy-off
+    kitchen converge $1
+}
+function kd(){
+    proxy-on
+    kitchen destroy $1
+}
+function klogin(){
+    proxy-off
+    kitchen login $1
+}
+function kv(){
+    proxy-off
+    kitchen verify $1
+}
+function kt(){
+    kd $1
+    kcreate $1
+    kv $1
+    kd $1
+}
+else
+    alias kcreate="kitchen create $1"
+    alias kc="kitchen converge $1"
+    alias kd="kitchen destroy $1"
+    alias klogin="kitchen login $1"
+    alias kv="kitchen verify $1"
+    alias kt="kitchen test $1"
+fi
+
+# Kitchen CLI Shortcuts
+##########################################################
 alias kdiag="kitchen diagnose $1"
 alias ki="kitchen init $1"
 alias kl="kitchen list"
-alias klogin="kitchen login $1"
 alias ks="kitchen setup $1"
 alias kdebug="kitchen $1 -l debug"
-alias kv="kitchen verify $1"
-alias kt="kitchen test $1"
 alias kexec="kitchen exec $1 -c $2"
 alias kyaml="KITCHEN_YAML=$1"
 alias kec2="KITCHEN_YAML=.kitchen.ec2.yml"
