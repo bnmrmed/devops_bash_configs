@@ -1,6 +1,11 @@
 ##CHANGE LOG
 ---
 
+## 2.0.1 - 12/18/2019 - Levon Becker
+* Renamed folder extras to aws
+* Moved .vimrc to folder named vim
+* Updated Readme
+
 ## 2.0.0 - 12/17/2019 - Levon Becker
 * Renamed .bash_* files to not be hidden
 * Moved to a new format to clean up the home folder and org under a profile.d directory in home

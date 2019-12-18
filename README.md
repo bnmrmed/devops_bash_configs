@@ -7,12 +7,15 @@ This makes it easier to pick and chose what you'd like or not like to load.
 Plus it makes it more organized. Although, if it's all in one or two files the shell will load faster.
 So, it's up to you if you'd like to merge them together.
 
+I have an example Linux setup script at the bottom of this article that uses the repo extensively.
+[Amazon Linux DevOps Workstation Setup Check List](https://www.bonusbits.com/wiki/Reference:Amazon_Linux_DevOps_Workstation_Setup_Check_List)
+
 ## Tested Operating Systems
 * MacOS Catalina (10.15.2)
     * Homebrew (2.2.1)
     * iTerm2 (3.3.7)
 * Ubuntu Desktop (19.04)
-* Amazon Linux 2 Workspace
+* Amazon Linux 2 Workspace (4.14.154-128.181)
 
 ## Application Versions
 * AWS CLI (1.16.300)
@@ -23,6 +26,9 @@ So, it's up to you if you'd like to merge them together.
 * Terraform (0.12.18)
     
 ## Usage
+#### [aws](https://github.com/bonusbits/devops_bash_config_examples/tree/master/aws)
+Skeleton AWS CLI config and credentials.
+
 #### [iterm2](https://github.com/bonusbits/devops_bash_config_examples/tree/master/iterm2)
 Ubuntu color scheme for iterm2.
 
@@ -47,6 +53,9 @@ To pull them try the following commands from the root directory.
 
 Then if you want to pull updates with the **fetch.recurseSubmodules** on a regular **git pull** should work. If it doesn't try the following.
 * ```git submodule foreach git pull origin master```
+
+#### [vim](https://github.com/bonusbits/devops_bash_config_examples/tree/master/vim)
+Vim config example.
 
 ## Wiki
 [DevOps Workstation Setup Check List](http://www.bonusbits.com/wiki/Reference:DevOps_Workstation_Setup_Check_List)
