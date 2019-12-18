@@ -227,5 +227,5 @@ alias aws-set-ac03prd-public="aws-set account03 prd useast1 public"
 
 # CFN Converter - https://github.com/bonusbits/cfn_converter
 if [ ! -h "/usr/local/bin/cfnc" ]; then
-	ln -s "$HOME/Development/github/bonusbits/cfn_converter/cfn-converter.rb" /usr/local/bin/cfnc
+	ln -s "$HOME/Development/bonusbits/cfn_converter/cfn-converter.rb" /usr/local/bin/cfnc
 fi

@@ -4,7 +4,7 @@
 # CloudFormation Launcher - https://github.com/bonusbits/cfn_launcher
 ################################################################################
 if [ ! -h "/usr/local/bin/cfnl" ]; then
-   ln -s "/Users/levon/Development/github/bonusbits/cfn_launcher/cfnl.sh" /usr/local/bin/cfnl
+   ln -s "/Users/levon/Development/bonusbits/cfn_launcher/cfnl.sh" /usr/local/bin/cfnl
 fi
 
 ################################################################################

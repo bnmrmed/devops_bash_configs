@@ -25,7 +25,7 @@ alias ll="ls -FalhG"
 # Backup - https://github.com/bonusbits/backup_macos
 ################################################################################
 if [ ! -h "/usr/local/bin/backupmacos" ]; then
-   ln -s "/Users/levon/Development/github/bonusbits/backup_macos/backup_macos.sh" /usr/local/bin/backupmacos
+   ln -s "/Users/levon/Development/bonusbits/backup_macos/backup_macos.sh" /usr/local/bin/backupmacos
 fi
 alias backupmacos-all="sudo backupmacos -d /Volumes/Seagate_1.5TB/Backups -r 60 -m 500000"
 alias backupmacos-users="sudo backupmacos -u -d /Volumes/Seagate_1.5TB/Backups -r 60 -m 500000"
