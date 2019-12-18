@@ -1,26 +1,26 @@
 # DevOps BASH Configuration Examples
-
 Basic BASH Profile Configuration examples for MacOS and Linux for a DevOps Workstation. 
-The configurations are focused on AWS, Vagrant, Docker, Chef and Test Kitchen.
+The configurations are focused on AWS, Docker, Chef and Test Kitchen.
 
-I've split up a lot of the aliases into their own BASH scripts under shared. 
+I've split up the BASH scripts into their own BASH scripts under shared. 
 This makes it easier to pick and chose what you'd like or not like to load. 
 Plus it makes it more organized. Although, if it's all in one or two files the shell will load faster.
 So, it's up to you if you'd like to merge them together.
 
 ## Tested Operating Systems
-* MacOS (10.12.3)
-    * Homebrew (1.1.10)
-    * iTerm2 (3.0.14)
-* Ubuntu Desktop (16.04)
+* MacOS Catalina (10.15.2)
+    * Homebrew (2.2.1)
+    * iTerm2 (3.3.7)
+* Ubuntu Desktop (19.04)
+* Amazon Linux 2 Workspace
 
 ## Application Versions
-* Docker (17.03.0-ce)
-* VirtualBox (5.1.18)
-* Vagrant (1.8.6)
-* Chef Development Kit (1.2.22)
-* Additional Gems
-    * kitchen-docker (2.6.0)
+* AWS CLI (1.16.300)
+* Chef Development Kit (4.5.0)
+* Docker (19.03.5)
+* kitchen-docker (2.9.0)
+* Kubernetes (1.15.5)
+* Terraform (0.12.18)
     
 ## Submodules
 The scripts directory consists of git submodules. Meaning they are clones of other git repositories I've created.
