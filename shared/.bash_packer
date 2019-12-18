@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-# Packer
-export PATH=$PATH:$HOME/packer

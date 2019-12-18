@@ -1,6 +1,14 @@
 ##CHANGE LOG
 ---
 
+## 2.0.0 - 12/17/2019 - Levon Becker
+* Renamed .bash_* files to not be hidden
+* Moved to a new format to clean up the home folder and org under a profile.d directory in home
+* Added aem, circleci, git, java, jx, kubernetes, ruby, ssh, upgrades profiles
+* Updated headers to match
+* Move .bash_profile under profile.d in repo for organizational purposes, I place in root of home like normal
+* Ditched the macos & linux folder. The individual configs are now in profile.d/extras/macos.sh profile.d/extras/linux.sh
+
 ## 1.2.4 - 07/12/2017 - Levon Becker
 * Moved aws-clear to before sets. So when wrong args entered won't clear what is currently set until really going to reset them.
 

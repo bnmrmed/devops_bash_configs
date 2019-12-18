@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+################################################################################
+# Build Docker Images - https://github.com/bonusbits/build_docker_image
+################################################################################
 if [ ! -h "/usr/local/bin/bdi" ]; then
    ln -s "$HOME/Development/github/bonusbits/build_docker_image/bdi.rb" /usr/local/bin/bdi
 fi
