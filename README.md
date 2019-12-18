@@ -22,7 +22,22 @@ So, it's up to you if you'd like to merge them together.
 * Kubernetes (1.15.5)
 * Terraform (0.12.18)
     
-## Submodules
+## Usage
+#### [iterm2](https://github.com/bonusbits/devops_bash_config_examples/tree/master/iterm2)
+Ubuntu color scheme for iterm2.
+
+#### [Profile.d](https://github.com/bonusbits/devops_bash_config_examples/tree/master/profile.d)
+The shared folder has BASH scripts and settings for both Linux and macOS. Copy the profile.d directory to your home directory. move the .bash_profile to the root of the home folder. Check that .profile loads the .bash_profile. Grab the macos or linux bash profiles from the profile.d/extras folder and move to profile.d.
+
+I have several clients and environments I work in so I have several <client name>.sh in the clients folder. I pick which ones I'm working on and add/remove to the .bash_profile for loop list. Just not enough time in the day or I'd script that too. later...
+
+#### [Scripts](https://github.com/bonusbits/devops_bash_config_examples/tree/master/scripts)
+The scripts folder has git submodules of other projects I refer to in some of the scripts. 
+Basically just a copy of other github projects I think relate.
+
+Grab examples and enter your user and account information where required.
+
+###### Submodules
 The scripts directory consists of git submodules. Meaning they are clones of other git repositories I've created.
 To pull them try the following commands from the root directory.
 
@@ -32,22 +47,6 @@ To pull them try the following commands from the root directory.
 
 Then if you want to pull updates with the **fetch.recurseSubmodules** on a regular **git pull** should work. If it doesn't try the following.
 * ```git submodule foreach git pull origin master```
-    
-## Usage
-#### [Linux](https://github.com/bonusbits/devops_bash_config_examples/tree/master/linux)
-The linux folder has BASH scripts specific to RHEL/Ubuntu that will not work on macOS.
-
-#### [macOS](https://github.com/bonusbits/devops_bash_config_examples/tree/master/macos)
-The macOS folder has BASH scripts and settings specific to macOS that may or may not work correctly on linux flavors.
-
-#### [Shared](https://github.com/bonusbits/devops_bash_config_examples/tree/master/shared)
-The shared folder has BASH scripts and settings for both Linux and macOS.
-
-#### [Scripts](https://github.com/bonusbits/devops_bash_config_examples/tree/master/scripts)
-The scripts folder has git submodules of other projects I refer to in some of the scripts. 
-Basically just a copy of other github projects I think relate.
-
-Grab examples and enter your user and account information where required.
 
 ## Wiki
 [DevOps Workstation Setup Check List](http://www.bonusbits.com/wiki/Reference:DevOps_Workstation_Setup_Check_List)
