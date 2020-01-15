@@ -2,7 +2,8 @@
 ---
 
 ## 2.0.2 - 01/15/2020 - Levon Becker
-* Added some basic terraform aliases 
+* Added some basic terraform aliases
+* Added release and issues badge to readme
 
 ## 2.0.1 - 12/18/2019 - Levon Becker
 * Renamed folder extras to aws

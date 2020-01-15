@@ -1,3 +1,6 @@
+[![Project Release](https://img.shields.io/badge/release-v2.0.2-blue.svg)](https://github.com/bonusbits/bonusbits_base)
+[![GitHub issues](https://img.shields.io/github/issues/bonusbits/devops_bash_configs.svg)](https://github.com/bonusbits/devops_bash_configs/issues)
+
 # DevOps BASH Configurations
 Basic BASH Profile Configuration examples for MacOS and Linux for a DevOps Workstation. 
 The configurations are focused on AWS, Docker, Chef and Test Kitchen. It can give you a jump start on setting up a Linux based workstation for doing devops type of work. I mainly wrote this for myself for consulting. A quick way to get up and running with how I like things setup in BASH.
