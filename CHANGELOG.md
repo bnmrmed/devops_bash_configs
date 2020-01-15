@@ -1,6 +1,9 @@
 ##CHANGE LOG
 ---
 
+## 2.0.2 - 01/15/2020 - Levon Becker
+* Added some basic terraform aliases 
+
 ## 2.0.1 - 12/18/2019 - Levon Becker
 * Renamed folder extras to aws
 * Moved .vimrc to folder named vim
