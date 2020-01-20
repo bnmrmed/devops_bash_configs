@@ -1,12 +1,45 @@
 #!/usr/bin/env bash
 
-# Bash completion has been installed to:
+################################################################################
+# Path
+################################################################################
+export PATH="$PATH:/usr/local/sbin"
+
+################################################################################
+# Shell Completion - https://docs.brew.sh/Shell-Completion
+################################################################################
+# BASH
 #   /usr/local/etc/bash_completion.d
+if type brew &>/dev/null; then
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
+      [[ -r "$COMPLETION" ]] && source "$COMPLETION"
+    done
+  fi
+fi
+
+# ZSH
+#   /usr/local/share/zsh/site-functions
+# if type brew &>/dev/null; then
+#   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+# fi
+# rm -f ~/.zcompdump; compinit
+# chmod go-w "$(brew --prefix)/share"
 
 ################################################################################
 # Upgrade
 ################################################################################
+# In case you want the ability to switch between versions i.e. Terraform
 function upgrade_homebrew (){
+    echo "INFO: Updating HomeBrew..."
+    brew update
+    echo "INFO: Upgrading HomeBrew..."
+    brew upgrade
+}
+function upgrade_homebrew_cleanup (){
     echo "INFO: Updating HomeBrew..."
     brew update
     echo "INFO: Upgrading HomeBrew..."

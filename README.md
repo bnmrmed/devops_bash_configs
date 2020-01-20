@@ -1,4 +1,4 @@
-[![Project Release](https://img.shields.io/badge/release-v2.0.2-blue.svg)](https://github.com/bonusbits/bonusbits_base)
+[![Project Release](https://img.shields.io/badge/release-v2.0.3-blue.svg)](https://github.com/bonusbits/bonusbits_base)
 [![GitHub issues](https://img.shields.io/github/issues/bonusbits/devops_bash_configs.svg)](https://github.com/bonusbits/devops_bash_configs/issues)
 
 # DevOps BASH Configurations

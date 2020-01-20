@@ -1,6 +1,12 @@
 ##CHANGE LOG
 ---
 
+## 2.0.3 - 01/20/2020 - Levon Becker
+* Added Bash completion logic to homebrew profile script
+* Removed brew cleanup from default so can save older versions for version switching such as Terraform etc.
+* Added a couple aws cli cloudformation aliases
+* Moved old method of aws env switching from aws.sh to aem.sh which will eventually replace those bash functions.
+
 ## 2.0.2 - 01/15/2020 - Levon Becker
 * Added some basic terraform aliases
 * Added release and issues badge to readme
